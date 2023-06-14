@@ -4,7 +4,8 @@
 Donc j'ai vite découvert que contrairement a React.js le rootage est intégré dans SvelteKit, il suffit de créer sa page au bon endroit dans le fichier routes.
 Pour naviguer il suffit d'une balise `<a href="/folderName"></a>`
 Donc pour créer une page il faut un fichier +page.svelte dans son dossier, et il est possible de créer un fichier +layout.svelte qui sera transmis à tous ses dossiers enfant. C'est donc le bon endroit pour créer une navbar qui sera dispo dans toute l'app. Donc je créé mon +layout.svelte à la racine de mon app, j'importe mon css, je créé ma navbar et il ne faut pas oublier la balise `<slot />` qui indique ou ira le code de la page.
-`<script lang="ts">
+```html
+<script lang="ts">
     import "../global.css";
 
 </script>
@@ -22,7 +23,8 @@ Donc pour créer une page il faut un fichier +page.svelte dans son dossier, et i
 </div>
 <style type="text/css">
 
-</style>`
+</style>
+```
 
 
 
