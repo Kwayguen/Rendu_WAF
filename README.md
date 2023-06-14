@@ -1,4 +1,7 @@
-# Rendu_WAF
+# Rendu Web Avancé Front
+## J'ai choisi pour ce module d'explorer la technologie sveltekit
+### Dans un premier temps j'ai simplement fait une page pour essayer de faire un call API et de l'utiliser.
+
 
 Contexte, variable globale, thème
 navbar
