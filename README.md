@@ -68,7 +68,7 @@ Donc je commence par l'appel API avec un fetch puis je map le résultat dans une
 
 <Picture {src} {alt} />
 ```
-Ensuite j'affiche un bouton par élément de la liste, chaque bouton affiche une image dans le component placeholder => <Picture /> qui est un component qui gère l'affichage d'une image.
+Ensuite j'affiche un bouton par élément de la liste, chaque bouton affiche une image dans le component placeholder => ```<Picture />``` qui est un component qui gère l'affichage d'une image.
 C'est tout pour le call API.
 <br>
 ### Variables d'état
