@@ -85,6 +85,8 @@ variable = false;
 ```
 Cette différence s'explique par le fait que react.js utilise une approche de rendu virtuel (Virtual DOM), où les modifications de l'interface utilisateur sont d'abord appliquées à une représentation virtuelle de l'arbre DOM, puis diffusées vers le navigateur; SvelteKit lui adopte une approche de rendu compilé, où le code source est transformé en JavaScript optimisé lors de la compilation et directement exécuté dans le navigateur.
 
+
+<br>Finir changement de theme, mettre un useeffect sur le new theme et faire une action, puis tout expliquer et comparer a react <br> 
 Contexte, variable globale, thème
 navbar
 changement de page -> log la page quittée et la page d'arrivée
