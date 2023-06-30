@@ -80,7 +80,7 @@ setCount(count + 1);
 ```
 SvelteKit priorise la réactivité et une simple déclaration de variable permet de pouvoir la modifier en code et l'affichage sera directement mis à jour.
 ```typescript
-const variable = true;
+let variable = true;
 variable = false;
 ```
 Cette différence s'explique par le fait que react.js utilise une approche de rendu virtuel (Virtual DOM), où les modifications de l'interface utilisateur sont d'abord appliquées à une représentation virtuelle de l'arbre DOM, puis diffusées vers le navigateur; SvelteKit lui adopte une approche de rendu compilé, où le code source est transformé en JavaScript optimisé lors de la compilation et directement exécuté dans le navigateur.
