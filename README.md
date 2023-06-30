@@ -25,6 +25,51 @@ Donc pour créer une page il faut un fichier +page.svelte dans son dossier, et i
 
 </style>
 ```
+### J'ai ensuite fait un exemple d'appel API
+Le principe est simple, avec un bouton j'appelle une API qui me fournit une liste de 10 images, et je permets avec un bouton par image de les afficher.
+Je créé donc le répertoire de la route de ma page pour le call API, la page ressemble à ça:
+```html
+<body>
+  <main>
+    <h1>Pick Cats Pics Page</h1>
+    <section>
+      <PicPicker />
+    </section>
+  </main>
+</body>
+```
+Donc simplement un titre puis j'appelle le composant 'PicPicker'
+```typescript
+let picList:{src: string, alt: string}[] = [];
+const randomPics = async () => {
+  let res = await fetch("https://api.thecatapi.com/v1/images/search?limit=10");
+  let randPic = await res.json();
+  picList = randPic.map((p:any) => {
+    return {src: p.url, alt: p.id}
+  });
+}
+
+const selectPic = (newSrc: string, newAlt: string) => {
+    src = newSrc;
+    alt = newAlt;
+};
+```
+Donc je commence par l'appel API avec un fetch puis je map le résultat dans une liste.
+```html
+<div class="head">
+<h2>Image picker </h2>
+<button class="button" on:click={randomPics}>Get Pics</button>
+</div>
+<div class="buttons">
+    {#each picList as { src, alt}}
+        <button on:click={() => selectPic(src, alt)} >{alt}</button>
+    {/each}
+</div>
+
+<Picture {src} {alt} />
+```
+Ensuite j'affiche un bouton par élément de la liste, chaque bouton affiche une image dans le component placeholder => <Picture /> qui est un component qui gère l'affichage d'une image.
+C'est tout pour le call API.
 
 
 
