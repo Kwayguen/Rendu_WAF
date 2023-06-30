@@ -70,8 +70,20 @@ Donc je commence par l'appel API avec un fetch puis je map le résultat dans une
 ```
 Ensuite j'affiche un bouton par élément de la liste, chaque bouton affiche une image dans le component placeholder => <Picture /> qui est un component qui gère l'affichage d'une image.
 C'est tout pour le call API.
-
-
+<br>
+### Variables d'état
+Dans react.js, pour utiliser une variable on doit passer par la fonction useState, pour accèder à l'état de la variable.<br>
+Pour la modifier il faut passer par une fonction qui va aller modifier l'état de la variable.
+```typescript 
+const [count, setCount] = useState(0);
+setCount(count + 1);
+```
+SvelteKit priorise la réactivité et une simple déclaration de variable permet de pouvoir la modifier en code et l'affichage sera directement mis à jour.
+```typescript
+const variable = true;
+variable = false;
+```
+Cette différence s'explique par le fait que react.js utilise une approche de rendu virtuel (Virtual DOM), où les modifications de l'interface utilisateur sont d'abord appliquées à une représentation virtuelle de l'arbre DOM, puis diffusées vers le navigateur; SvelteKit lui adopte une approche de rendu compilé, où le code source est transformé en JavaScript optimisé lors de la compilation et directement exécuté dans le navigateur.
 
 Contexte, variable globale, thème
 navbar
